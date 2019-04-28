@@ -17,14 +17,26 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "Jenkins"
-        self.view.backgroundColor = .red
         
         textLabel.text = "Welcome to Jenkins!"
         self.view.addSubview(textLabel)
         textLabel.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(30)
             make.top.equalTo(self.view.snp.topMargin).offset(20)
-            
+        }
+        
+        let shadowOffset: CGFloat = 0
+        let shadowView = UIView()
+        shadowView.backgroundColor = .orange
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOpacity = 1
+        shadowView.layer.shadowOffset = .init(width: shadowOffset, height: shadowOffset)
+        shadowView.layer.shadowRadius = 8
+        self.view.addSubview(shadowView)
+        shadowView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(16)
+            make.top.equalTo(textLabel.snp.bottom).offset(16)
+            make.height.equalTo(50)
         }
     }
 
