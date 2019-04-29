@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         shadowView.snp.makeConstraints { (make) in
             make.left.right.equalToSuperview().inset(16)
             make.top.equalTo(textLabel.snp.bottom).offset(16)
-            make.height.equalTo(50)
+            make.height.(50)
         }
     }
 
